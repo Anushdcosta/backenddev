@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- overlay navigation bar that stays to the top of the screen  with all the different menu options-->
+<header>
+    <nav class="navigation-bar">
+        <div class="menu">
+            <ul>
+                <li><h1>My To do list</h1></li>
+                <div class="seperator">
+                    <li><a href="hello.html">Work</a></li>
+                    <li><a href="hello.html">Home</a></li>
+                </div>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <div class="stcontainer">
+        <h1>My To Do List</h1>
+    </div>
+    <div class="container">
+        
+        <ul class="list-group">
+            <li class="list-item">
+                <input type="checkbox" class="checkbox">
+                <label for="item1" id="col">Cook a meal</label>
+            </li>
+            <li class="list-item">
+                <input type="checkbox" class="checkbox">
+                <label for="item2" id="col">Review notes</label>
+            </li>
+            <li class="list-item">
+                <input type="checkbox" class="checkbox">
+                <label for="item3" id="col">Cook a meal</label>
+            </li>
+            <li class="list-item">
+                <input type="checkbox" class="checkbox">
+                <label for="item4" id="col">Review notes</label>
+            </li>
+        </ul>
+        <div class="input-field">
+            <input type="text" id="new-item">
+            <button class="add-button">+</button>
+        </div>
+    </div>
+    <script>
+        const newItemInput = document.getElementById('new-item');
+        const addButton = document.querySelector('.add-button');
+        const listGroup = document.querySelector('.list-group');
+
+        addButton.addEventListener('click', () => {
+            const newItemText = newItemInput.value.trim();
+            if (newItemText !== "") {
+                const newListItem = document.createElement('li');
+                newListItem.classList.add('list-item');
+                newListItem.innerHTML = `
+                    <input type="checkbox" class="checkbox">
+                    <label for="${newItemText}" id="col">${newItemText}</label>
+                `;
+                listGroup.appendChild(newListItem);
+                newItemInput.value = "";
+            }
+        });
+    </script>
+</body>
+</html>

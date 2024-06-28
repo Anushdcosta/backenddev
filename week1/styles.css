@@ -1,0 +1,121 @@
+body {
+    font-family: sans-serif;
+    display: grid;
+    grid-template-rows: 0.25fr 0.75fr;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  background-size: 100% 100%;
+}
+.container {
+    background-color: #fbb782;
+    padding: 20px;  
+    max-width: 90%;
+    margin-bottom: 2cm;
+}
+.stcontainer {
+    border: 0.10cm solid purple;
+    background-color: #fbb782;
+    color: white;
+    padding: 20px;  
+    max-width: 90%;
+}
+.stcontainer h1 {
+    color: white;
+    margin: 0;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+.list-group {
+    list-style: none;
+    padding: 0;
+}
+.list-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.checkbox {
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+}
+.input-field {
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-right: 10px;
+}
+.add-button {
+    border: 1cm solid #333;
+    color: black;
+    font-size: larger;
+    font-weight: 500;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+#col {
+    color: white;
+    font-size: larger;
+}
+#new-item {
+    font-size: larger;
+}
+
+.navigation-bar {
+    background-color: #fbb782;
+    padding: 0%;
+    position: fixed;
+    left: 0; right: 0; 
+    top: 0;
+    z-index: 99;
+    height: 50px;
+    opacity: 90%;
+    text-align: right;
+    align-items: end;  
+  }
+  .menu {
+    text-align: right
+  }
+  .menu ul {
+  justify-content:right;
+  padding-right: 40px;
+  align-items:end;
+  display: flex;
+  margin-top: 10px;
+  overflow: hidden;
+  list-style-type: none;
+  }
+.seperator {
+    padding-left: 63%;
+    display: flex;
+}
+
+  .menu h1 {
+    justify-content:left;
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    padding-left: 1cm;
+    padding: 0;
+    margin: 0;
+  }
+
+  .menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    padding-left: 1cm;
+  }
+  
