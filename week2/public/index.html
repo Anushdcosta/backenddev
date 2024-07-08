@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="converter">
+        <h1>AED Converter</h1>
+        <input type="number" id="amount" name="amount" required/>
+        <button onclick="submit()" style="font-size: 0.6cm; ">Submit</button>
+        <div id="result">
+            <h1 id="usd">USD: $0</h1>
+            <h1 id="euro">EURO: €0</h1>
+            <h1 id="omr">OMR: 0</h1>
+        </div>
+    </div>
+    <script>
+        function submit() {
+            var input = document.getElementById("amount").value;
+            let number = parseFloat(input);
+            
+            let usd = number * 0.27;
+            let euro = number * 0.25;
+            let omr = number * 0.10;
+
+            document.getElementById("usd").innerText = "USD: $" + usd.toFixed(2);
+            document.getElementById("euro").innerText = "EURO: €" + euro.toFixed(2);
+            document.getElementById("omr").innerText = "OMR: " + omr.toFixed(2);
+        }
+    </script>
+</body>
+</html>
