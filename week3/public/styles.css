@@ -1,0 +1,27 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6cm;
+    padding: 0px;
+}
+#Currency {
+    font-size: 30px;
+    border-radius: 20px;
+}
+input {
+    padding: 8px;
+    border-radius: 14px;
+    margin-top: 18px;
+}
+#amount {
+    font-size: 22px;
+    border-radius: 15px;
+}
+#button {
+    font-size: 22px;
+    width: 5cm;
+}
+#realbtc {
+    margin: 0;
+}

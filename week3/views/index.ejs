@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Ticker</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <form onsubmit="return false;">
+        <select name="Currency" id="Currency">
+            <option value="USD">United States (USD)</option>
+            <option value="AUD">Australia (AUD)</option>
+            <option value="BRL">Brazil (BRL)</option>
+            <option value="CAD">Canada (CAD)</option>
+            <option value="CHF">Switzerland (CHF)</option>
+            <option value="CLP">Chile (CLP)</option>
+            <option value="CNY">Chinese (CNY)</option>
+            <option value="DKK">Danish (DKK)</option>
+            <option value="EUR">European (EUR)</option>
+            <option value="GBP">British (GBP)</option>
+            <option value="HKD">Hong Kong (HKD)</option>
+            <option value="INR">Indian (INR)</option>
+            <option value="ISK">Iceland (ISK)</option>
+            <option value="JPY">Japanese (JPY)</option>
+            <option value="KRW">Korean (KRW)</option>
+            <option value="NZD">New Zealand (NZD)</option>
+            <option value="PLN">Polish (PLN)</option>
+            <option value="RUB">Russian (RUB)</option>
+            <option value="SEK">Swedish (SEK)</option>
+            <option value="SGD">Singapore (SGD)</option>
+            <option value="THB">Thai (THB)</option>
+            <option value="TRY">Turkish (TRY)</option>
+            <option value="TWD">New Taiwan (TWD)</option>
+        </select>
+        <input type="number" placeholder="Amount" id="amount">
+        <input type="button" value="SUBMIT" id="button" onclick="updateValue()">
+        <h1 id="Bitcoin"></h1>
+        <h1 id="realbtc"></h1>
+    </form>
+    <script>
+        async function updateValue() {
+            var curr = document.getElementById("Currency").value;
+            var amount = document.getElementById("amount").value;
+
+            if (amount === "") {
+                alert("Please enter an amount.");
+                return;
+            }
+
+            try {
+                const response = await fetch(`https://blockchain.info/tobtc?currency=${curr}&value=${amount}`);
+                if (!response.ok) {
+                    throw new Error("Network response was not ok " + response.statusText);
+                }
+                const btcValue = await response.json();
+
+                // Calculate the equivalent currency value per BTC
+                const equivalentCurrencyValue = amount / btcValue;
+
+                document.getElementById("Bitcoin").innerText = `BTC: ${btcValue}`;
+                document.getElementById("realbtc").innerText = `${curr}: ${equivalentCurrencyValue.toFixed(2)} BTC`
+            } catch (error) {
+                console.error("Fetch error: ", error);
+                alert("Failed to fetch Bitcoin value. Please try again later.");
+            }
+        }
+    </script>
+</body>
+</html>
