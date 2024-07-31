@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, #00b09b, #96c93d);
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5); /* Use 0.5 for 50% opacity */
+    padding: 50px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+input {
+    padding: 10px;
+    width: 200px;
+}
+
+button {
+    padding: 10px;
+    margin-left: 10px;
+    font-weight: 900;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#itemList {
+    margin-top: 20px;
+}
+
+.item {
+    background: #e9ecef;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    position: relative;
+    font-size: 21px;
+    position: relative; /* Ensure the cross button is positioned relative to the item */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and scaling */
+    font-weight: bolder;
+}
+
+/* Hover effect for the .item element */
+.item:hover {
+    background-color: #d6e0e0; /* Light grey background when hovered */
+    transform: scale(1.1); /* Slightly scale up the item */
+}
+.remove-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background: #c82333;
+}
+
+.remove-btn::before {
+    content: '×'; /* Cross character */
+    font-size: 16px;
+    line-height: 1;
+}
