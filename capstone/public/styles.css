@@ -6,6 +6,19 @@ body {
     background-attachment: fixed;
     background-size: cover;
 }
+body::-webkit-scrollbar {
+    background-color: #ffffff;
+    width: 8px;
+    
+}
+body::-webkit-scrollbar-thumb:hover {
+    width: 13px;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #5e5757;
+    border-radius: 3px;
+    transition: width 0.1s;
+}
 .container {
     display: flex;
     justify-content: space-between;
@@ -50,6 +63,7 @@ body {
     font-size: 22px;
     border-radius: 5px;
     transition: border-radius 0.5s, background-color 0.5s;
+    border: 0.1mm solid coral;
 }
 
 .greeting {
@@ -57,10 +71,114 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: italic;
 }
 .greeting h2 {
     margin-top: 0;
 }
 .greeting h1 {
     margin-bottom: 5px;
+}
+
+.display:hover {
+    scale: 1.1;
+    backdrop-filter: blur(2px);
+    border-radius: 10px;
+}
+/* Display box */
+.display {
+    border: 1mm solid #000;
+    margin: 0.75cm;
+    margin-right: 200px;
+    margin-left: 200px;
+    font-size: 13px;
+    /* padding-left: 81px; */
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: italic;
+    transition: scale 0.5s, backdrop-filter 0.5s, border-radius 0.7s;
+    cursor: pointer;
+}
+#display_name {
+    padding-left: 30px;
+    margin-bottom: 0;
+}
+#display_date {
+    padding-left: 30px;
+    margin-top: 0;
+}
+#display_data {
+    font-size: 17px;
+    padding-left: 29px;
+    padding-right: 45px;
+    font-weight: lighter;
+    margin-top: 0;
+}
+#display_title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 30px;
+}
+#blog {
+    color: black;
+    text-decoration: none;
+}
+.current_blog {
+    margin: 45px;
+    border: 0.5mm solid black;
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: italic;
+    padding: 13px;
+    padding-bottom: 25px;
+}
+#current_blog_title {
+    margin: 10px;
+    font-size: 30px;
+    padding-left: 35px;
+    font-weight: 400;
+}
+#current_details {
+    display: flex;
+    justify-content: space-between;
+}
+#current_blog_date {
+    padding-right: 35px;
+}
+#current_blog_Name {
+    padding-left: 28px;
+    color: darkblue;
+}
+#current_blog_data {
+    text-align: justify;
+    font-size: 23px;
+    font-weight: 400;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+/* create section */
+.create_box {
+    border: 1mm solid black;
+    margin: 4cm;
+    padding: 38px;
+    display: flex;
+}
+#blog_create {
+    font-size: 0.85cm;
+}
+input {
+    font-size: 0.75cm;
+    margin-bottom: 0.5cm;
+    width: 100%;
+}
+#Data {
+    width: 100%;
+    font-size: 0.75cm;
 }

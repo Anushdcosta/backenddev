@@ -1,0 +1,17 @@
+<%- include('partials/header') %>
+<body>
+    <% console.log(blog) %>
+    <%- include('partials/mainhead') %>
+    <div class="current_blog">
+        <h1 id="current_blog_title"><%= blog.Title %></h2>
+        <div id="current_details">
+            <h3 id="current_blog_Name">Posted By: <%= blog.Name %></h3>
+            <h3 id="current_blog_date"><%= blog.Date %></h3>
+        </div>
+        <% let blogarr = blog.Data.split("\n")
+    for (let i = 0; i < blogarr.length; i++) {
+      if (blogarr[i] != "") {%>
+        <h3 id="current_blog_data"><%= blogarr[i] %> <br></h3>
+        <% }} %>
+    </div>
+</body>

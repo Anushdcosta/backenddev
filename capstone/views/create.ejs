@@ -1,4 +1,16 @@
 <%- include('partials/header.ejs') %>
 <body>
     <%- include('partials/mainhead.ejs') %>
+    <% sample_data = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget lacinia turpis, non aliquet augue. Curabitur urna urna, rhoncus egestas quam id, pulvinar gravida mauris. Nulla sit amet sodales leo. Vivamus ornare sapien nec tellus dapibus consequat. Nullam eu vestibulum odio. Proin consectetur ipsum in sem ornare laoreet. Vestibulum ac quam magna. Aenean pulvinar aliquam sapien nec tristique. Aliquam varius leo ipsum, quis consequat turpis consequat nec. Sed ac lorem id arcu facilisis dignissim. Integer egestas molestie arcu, nec lacinia augue iaculis tincidunt. Ut consectetur, augue in tristique imperdiet, tellus erat eleifend felis, at pellentesque est magna at ante. Suspendisse risus velit, laoreet vel lacus eget, tempor scelerisque erat. Pellentesque id efficitur nibh. In elit neque, aliquet sit amet convallis nec, pulvinar eu purus. Quisque ut nunc sed ligula accumsan molestie." %>
+    <div class="create_box">
+        <form action="/submit" id="blog_create" method="POST">
+            <label for="Name">Name: </label>
+            <input name="Name" type="text" id="Name" placeholder="Name">
+            <label for="Title">Title: </label>
+            <input name="Title" type="text" id="Title" placeholder="Title">
+            <label for="Data">Data: </label> <!-- Corrected name attribute -->
+            <textarea name="Data" id="Data" placeholder="<%= sample_data %>" rows="5"></textarea>
+            <input type="submit" value="submit">
+        </form>
+    </div>
 </body>
