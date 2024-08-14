@@ -1,0 +1,18 @@
+<%- include('partials/header') %>
+<body>
+  <%- include('partials/mainhead', {signin: login, }) %>  
+  <div class="signupdiv">
+    <h1>Login</h1>
+    <form action="/login" method="POST">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required><br><br>
+      
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required><br><br>
+      
+      <button id="loginbutton" type="submit">Login</button>
+    </form>
+    <a id="signupredirect" href="/reg">Don't have an account? Signup</a>
+  </div>  
+</body>
+</html>

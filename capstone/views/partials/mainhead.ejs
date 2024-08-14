@@ -1,9 +1,31 @@
+<% if (signin == 0) { %>
+    <div class="container">
+        <div class="left-side">
+            <img src="logo.png" alt="Your Image">
+            <h1 id="name"><a href="/">AAA Blogs</a></h1>
+        </div>
+        <div class="right-side">
+            <a href="/reg">Signup</a>
+        </div>
+    </div>
+<% } else { %>
 <div class="container">
     <div class="left-side">
         <img src="logo.png" alt="Your Image">
         <h1 id="name"><a href="/">AAA Blogs</a></h1>
     </div>
-    <div class="right-side">
-        <a href="/create">+ Create</a>
+        
+        <div class="top-div">
+            <div class="account-dropdown">
+                <button class="account-button"><img style="width: 61px;" src="user.png"></button>
+                <div class="dropdown-content">
+                <a href="/create">Create New Blog</a>
+                <a href="/myblogs">My Blogs</a>
+                <a href="/signout">Sign Out</a>
+            </div>
+        </div>
     </div>
+
+
 </div>
+<% } %>

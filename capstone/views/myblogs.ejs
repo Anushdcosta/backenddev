@@ -1,0 +1,8 @@
+<%- include('partials/header.ejs') %>
+<body>
+    <%- include('partials/mainhead.ejs', {signin: login}) %>
+    <div class="greeting">
+        <h1 style="text-decoration: underline; font-size: 1.5cm;">My Blogs</h1>
+    </div>
+    <%- include('partials/displaybox', {blogs:blogs, active:"personal"}) %>
+</body>

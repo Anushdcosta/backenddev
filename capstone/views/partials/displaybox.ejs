@@ -8,16 +8,31 @@ function ellipsify (str, num) {
    }
 } 
 %>
-<% if (blogs.length > 0) {
-for (let i = blogs.length - 1; i >= 0; i--) { %>
-    <div class="display">
-        <a id="blog" href="/<%= blogs[i]._id %>">
-            <h2 id="display_name"><%= blogs[i].Name %></h2>
-            <h3 id="display_date"><%= blogs[i].Date %></h3>
-            <h3 id="display_title"><%= blogs[i].Title %></h3>
-            <h3 id="display_data"><%= ellipsify(blogs[i].Data, 300) %></h3>
-        </a>
-    </div>
-<% }} else { %>
-    <h1>There are no blogs at the moment.</h1>
-<%}%>
+<% numofelem = 0;
+length = 0;
+blogs.forEach(blog => {
+    length = length + 1;
+    if (blog.available == "1") {
+        numofelem = numofelem + 1
+    }
+}) 
+if (numofelem > 0) {
+%>
+
+    <% if (blogs.length > 0) {
+        for (let i = blogs.length - 1; i >= 0; i--) { %>
+            <% if (blogs[i].available == '1') { %>
+            <div id="display" class="display">
+                <a id="blog" href="/<%= blogs[i]._id %>">
+                    <h2 id="display_name"><%= blogs[i].Name %></h2>
+                    <h3 id="display_date"><%= blogs[i].Date %></h3>
+                    <h3 id="display_title"><%= blogs[i].Title %></h3>
+                    <h3 id="display_data"><%= ellipsify(blogs[i].Data, 300) %></h3>
+                </a>
+            </div>
+        <% }}} else { %>
+            <h1>There are no blogs at the moment.</h1>
+        <%}%>
+<% } else {%>
+    <h1 id="notexist">There are no blogs at the moment. <a href="/create"> Create a new blog </a>now</h1>
+<% } %>

@@ -5,6 +5,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    overflow-x: hidden;
 }
 body::-webkit-scrollbar {
     background-color: #ffffff;
@@ -86,7 +87,7 @@ body::-webkit-scrollbar-thumb {
 .display:hover {
     scale: 1.1;
     backdrop-filter: blur(2px);
-    border-radius: 10px;
+    border-radius: 20px;
 }
 /* Display box */
 .display {
@@ -100,8 +101,11 @@ body::-webkit-scrollbar-thumb {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: italic;
+    border-radius: 5px;
     transition: scale 0.5s, backdrop-filter 0.5s, border-radius 0.7s;
     cursor: pointer;
+    overflow-x: hidden;
+    word-break: break-word;
 }
 #display_name {
     padding-left: 30px;
@@ -136,6 +140,7 @@ body::-webkit-scrollbar-thumb {
     font-style: italic;
     padding: 13px;
     padding-bottom: 25px;
+    word-break: break-word;
 }
 #current_blog_title {
     margin: 10px;
@@ -173,12 +178,244 @@ body::-webkit-scrollbar-thumb {
 #blog_create {
     font-size: 0.85cm;
 }
+#notexist a {
+    color: red;
+}
+#notexist {
+    text-align: center;
+    margin-top: 5cm;
+}
 input {
     font-size: 0.75cm;
     margin-bottom: 0.5cm;
     width: 100%;
+    margin-top: 8PX;
+    border-radius: 5px;
 }
 #Data {
     width: 100%;
     font-size: 0.75cm;
+}
+/* signup */
+.signupdiv {
+    border: 1mm solid black;
+    margin: 76px;
+    margin-right: 11cm;
+    margin-left: 13cm;
+    text-align: center;
+    margin-top: 1cm;
+    margin-bottom: 57px;
+    padding: 1cm;
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 0;
+}
+label {
+    font-size: 21px;
+}
+#signupbutton {
+    font-size: 23px;
+    border-radius: 22px;
+    padding: 8px;
+    cursor: pointer;
+}
+#loginredirect {
+    font-size: 21px;
+}
+#loginbutton {
+    font-size: 23px;
+    border-radius: 22px;
+    padding: 8px;
+    cursor: pointer;
+}
+#signupredirect {
+    font-size: 21px;
+}
+.top-div {
+    /* background-color: #333; */
+    padding: 10px;
+    position: relative;
+    text-align: right;
+}
+  
+.account-dropdown {
+position: relative;
+display: inline-block;
+}
+
+.account-button {
+background-color: transparent;
+border: none;
+cursor: pointer;
+padding: 0;
+}
+.account-button img {
+    margin-right: 14px;
+    /* margin-top: 18px; */
+}
+.account-button:hover .account-image {
+opacity: 0.8;
+}
+
+.account-image {
+width: 40px; /* Adjust size as needed */
+height: 40px; /* Adjust size as needed */
+border-radius: 50%; /* Make it round, if it's a profile picture */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000000;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 21px;
+    transition: background-color 0.5s, color 0.5s, scale 0.5s, padding 0.5s;
+}
+
+.dropdown-content a:hover {
+background-color: #f1f1f1;
+color: #000;
+scale: 1.1;
+padding: 6px, 8px;
+}
+
+.account-dropdown:hover .dropdown-content {
+display: block;
+}
+.custom-div {
+    width: 200px;
+    height: 100px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    margin: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .custom-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+  }
+  
+  .custom-menu ul {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    font-size: 20px;
+}
+  
+  .custom-menu ul li {
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  
+  .custom-menu ul li:hover {
+    background-color: #f1f1f1;
+  }
+#delete {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    border: 2px solid rgb(231, 50, 50);
+    background-color: #ffffff00;
+    cursor: pointer;
+    box-shadow: 0 0 10px #333;
+    overflow: hidden;
+    transition: .3s;
+}
+#delete:hover {
+    background-color: rgb(245, 207, 207);
+    transform: scale(1.2);
+    box-shadow: 0 0 4px #111;
+    transition: .3s;
+}
+svg {
+    color: rgb(231, 50, 50);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s;
+}
+#delete:focus svg {
+    opacity: 0;
+    transition: .3s;
+}
+span {
+    width: 150px;
+    position: absolute;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    color: rgb(231, 50, 50);
+    font-weight: 600;
+    transition: .3s;
+}
+#delete:focus {
+    width: 150px;
+    height: 50px;
+    transition: .3s;
+}
+#delete:focus span {
+    opacity: 1;
+    transition: .3s;
+}
+.deletebutton {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+/* Edit button */
+#editbutton {
+    --c: #fff; /* text color */
+    
+    background: 
+      linear-gradient(90deg, #0000 33%, #fff5, #0000 67%) var(--_p,100%)/300% no-repeat,
+      #E97F02; /* background color */
+    color: #0000;
+    border: none;
+    transform: perspective(500px) rotateY(calc(20deg*var(--_i,-1)));
+    text-shadow: 
+      calc(var(--_i,-1)* 0.08em) -.01em 0   var(--c),
+      calc(var(--_i,-1)*-0.08em)  .01em 2px #0004;
+    outline-offset: .1em;
+    transition: 0.3s;
+  }
+  #editbutton:hover,
+  #editbutton:focus-visible {
+    --_p: 0%;
+    --_i: 1;
+  }
+  #editbutton:active {
+    text-shadow: none;
+    color: var(--c);
+    box-shadow: inset 0 0 9e9q #0005;
+    transition: 0s;
+  }
+  #editbutton {
+    font-family: system-ui, sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 0;
+    cursor: pointer;
+    padding: .1em .3em;
+    border-radius: 29px;
 }

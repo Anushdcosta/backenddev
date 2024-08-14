@@ -1,6 +1,8 @@
 <%- include('partials/header') %>
 <body>
-    <%- include('partials/mainhead') %>
-    <%- include('partials/greeting') %>
-    <%- include('partials/displaybox', {blogs:blogs}) %>
+    <%- include('partials/mainhead', {signin: login, }) %>
+    <div class="greeting">
+        <h1 style="text-decoration: underline; font-size: 1.5cm;">Blogs</h1>
+    </div>
+    <%- include('partials/displaybox', {blogs:blogs, active: "public"}) %>
 </body>
